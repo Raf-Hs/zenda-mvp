@@ -25,3 +25,6 @@ Content-Type: application/json
 ### 🔒 Ruta protegida de prueba (ejemplo con token)
 GET {{baseUrl}}/trips
 Authorization: Bearer {{token}}
+
+### 👥 Listar usuarios
+GET {{baseUrl}}/auth/users

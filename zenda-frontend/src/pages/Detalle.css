@@ -1,0 +1,177 @@
+.asignacion-lista {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.usuario-card {
+  background: #fff;
+  border: 1.8px solid #d9f3ef;
+  border-radius: 10px;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.usuario-card:hover {
+  background: #f0fdfa;
+  border-color: #2a9d8f;
+}
+
+.usuario-card.seleccionado {
+  border-color: #2a9d8f;
+  background: #e0f4f2;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.usuario-nombre {
+  font-weight: 600;
+  color: #2a9d8f;
+}
+
+.usuario-info {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Barra de progreso */
+.progress-wrapper {
+  margin-top: 1.8rem;
+}
+
+.progress-container {
+  width: 100%;
+  background: #e0f4f2;
+  border-radius: 10px;
+  height: 10px;
+  position: relative;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #2a9d8f, #64dfcb);
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 2.5s ease;
+}
+
+.progress-text {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #2a9d8f;
+  margin-top: 0.6rem;
+  font-weight: 500;
+}
+
+.mensaje-indicacion {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+}
+/* Lista de servicios (selección múltiple) */
+.servicios-lista {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.servicio-card {
+  background: #fff;
+  border: 1.8px solid #d9f3ef;
+  border-radius: 10px;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.servicio-card:hover {
+  background: #f0fdfa;
+  border-color: #2a9d8f;
+}
+
+.servicio-card.seleccionado {
+  border-color: #2a9d8f;
+  background: #e0f4f2;
+}
+
+.servicio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.servicio-nombre {
+  font-weight: 600;
+  color: #2a9d8f;
+}
+
+.servicio-desc {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+/* Checkmark */
+.check {
+  font-size: 1.1rem;
+  color: #2a9d8f;
+}
+
+/* Más espacio debajo de la barra de progreso */
+.progress-wrapper {
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+/* Seguimiento de pedido */
+.seguimiento {
+  margin-top: 1rem;
+}
+
+.seguimiento-lista {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.seguimiento-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: #555;
+  background: #f9fafa;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.seguimiento-item.actual {
+  border-left: 4px solid #2a9d8f;
+  background: #e8f7f5;
+  font-weight: 600;
+  color: #2a9d8f;
+}
+
+.seguimiento-item.completado {
+  color: #2a9d8f;
+  background: #f0fdfa;
+}
+
+.icono {
+  width: 22px;
+  text-align: center;
+}
+
+/* Botón */
+.card-btn {
+  margin-top: 1rem;
+}

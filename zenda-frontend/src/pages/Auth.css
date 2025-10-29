@@ -1,0 +1,132 @@
+/* ==========================
+   Zenda - Palette (Teal only)
+   ========================== */
+:root{
+  --z-teal-700:#1f7f73;
+  --z-teal-600:#23877c;
+  --z-teal-500:#2a9d8f;  /* primario */
+  --z-teal-400:#43b3a7;
+  --z-teal-300:#6fd0c6;
+  --z-teal-200:#a8e6df;
+  --z-gray-900:#333;
+  --z-gray-700:#555;
+  --z-gray-100:#f6f7fb;
+  --z-white:#fff;
+}
+
+/* ==========================
+   Zenda - Auth Styles (2025)
+   ========================== */
+.auth-container{
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;padding:1.5rem;
+  background-color:var(--z-gray-100);
+  font-family:"Poppins",Arial,sans-serif;color:var(--z-gray-900);
+}
+.auth-box{
+  width:100%;max-width:380px;background:var(--z-white);
+  padding:2rem;border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+  text-align:center;transition:transform .25s ease;
+}
+.auth-box:hover{ transform:translateY(-3px); }
+
+.auth-logo{ width:80px;height:80px;margin-bottom:.8rem; }
+
+.auth-title{
+  font-size:1.8rem;font-weight:700;margin:0;
+  color:var(--z-teal-500);
+}
+.auth-subtitle{ font-size:.9rem;color:var(--z-gray-700);margin:.5rem 0 1.6rem; }
+
+.auth-form{ display:flex;flex-direction:column;gap:1rem; }
+
+.auth-input, textarea.auth-input{
+  padding:.8rem 1rem;border:1.8px solid #ddd;background:#fafafa;
+  border-radius:10px;color:var(--z-gray-900);font-size:1rem;resize:none;
+  transition:border .25s, box-shadow .25s, background .25s;
+}
+.auth-input::placeholder{ color:#999; }
+.auth-input:focus{
+  outline:none;border-color:var(--z-teal-500);
+  box-shadow:0 0 0 3px rgba(42,157,143,.15);
+  background:var(--z-white);
+}
+
+/* Botón principal: degradado teal → teal claro */
+.auth-button{
+  background:linear-gradient(90deg, var(--z-teal-600), var(--z-teal-400));
+  color:#fff;padding:.85rem;border:none;border-radius:10px;
+  font-size:1rem;font-weight:600;cursor:pointer;
+  transition:background .3s, transform .2s, box-shadow .2s;
+}
+.auth-button:hover{
+  background:linear-gradient(90deg, var(--z-teal-700), var(--z-teal-500));
+  transform:translateY(-2px);
+  box-shadow:0 6px 12px rgba(35,135,124,.2);
+}
+
+.auth-footer{ margin-top:1.6rem;color:var(--z-gray-700);font-size:.9rem; }
+
+/* Enlaces en teal */
+.auth-link{
+  background:none;border:none;color:var(--z-teal-600);
+  font-weight:600;cursor:pointer;text-decoration:underline;margin-left:4px;
+  transition:color .2s;
+}
+.auth-link:hover{ color:var(--z-teal-700); }
+
+/* Mobile tweaks */
+@media (max-width:400px){
+  .auth-box{ padding:1.8rem 1.2rem; }
+  .auth-title{ font-size:1.6rem; }
+  .auth-input{ font-size:.95rem; }
+  .auth-button{ font-size:.95rem; }
+}
+
+/* ==============================
+   Zenda - Dashboard Móvil (Teal)
+   ============================== */
+.mobile-dashboard{
+  display:flex;flex-direction:column;align-items:center;
+  min-height:100vh;padding:1.5rem 1rem;
+  background-color:var(--z-gray-100);
+  font-family:"Poppins",Arial,sans-serif;color:var(--z-gray-900);
+}
+
+/* Header */
+.dash-header{text-align:center;margin-bottom:1.5rem;}
+.dash-logo{ width:80px;height:80px; }
+.dash-title{ font-size:1.9rem;font-weight:700;color:var(--z-teal-500);margin:.4rem 0 .2rem; }
+.dash-subtitle{ font-size:.95rem;color:var(--z-gray-700); }
+
+/* Sección principal */
+.dash-section{ width:100%;max-width:380px;margin-top:1rem; }
+.section-title{ font-size:1rem;font-weight:600;color:#444;margin-bottom:1rem; }
+
+/* Tarjetas */
+.card-list{ display:flex;flex-direction:column;gap:1rem; }
+.dash-card{
+  background:var(--z-white);border-radius:14px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  padding:1.2rem;text-align:left;transition:transform .2s, box-shadow .2s;
+}
+.dash-card:hover{ transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,.08); }
+.dash-card h3{ color:var(--z-teal-600);margin-bottom:.4rem; }
+.dash-card p{ font-size:.9rem;color:var(--z-gray-700);margin-bottom:.8rem; }
+
+/* Botón de tarjeta: degradado teal */
+.card-btn{
+  background:linear-gradient(90deg, var(--z-teal-600), var(--z-teal-400));
+  border:none;color:#fff;padding:.6rem 1rem;border-radius:8px;
+  font-size:.9rem;font-weight:600;cursor:pointer;width:100%;
+  transition:background .3s, transform .2s;
+}
+.card-btn:hover{
+  background:linear-gradient(90deg, var(--z-teal-700), var(--z-teal-500));
+  transform:translateY(-2px);
+}
+
+/* Footer */
+.dash-footer{ margin-top:auto;text-align:center;width:100%;max-width:380px; }
+.dash-copy{ font-size:.8rem;color:#999;margin-top:1rem; }
