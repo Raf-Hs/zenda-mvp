@@ -10,6 +10,7 @@ export default function Register() {
     password: "",
     rol: "cliente",
   });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,26 +20,32 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/auth/register", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message);
+      if (!res.ok) throw new Error(data.message || "Error en el registro");
+
       alert("✅ Registro exitoso. Ahora inicia sesión.");
       navigate("/login");
     } catch (err) {
       alert(`⚠️ ${err.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <img src="/Zenda Logo A.png" alt="Zenda logo" className="auth-logo" />
+        <img src="/zenda-logo.png" alt="Zenda logo" className="auth-logo" />
         <h1 className="auth-title">Crea tu cuenta</h1>
+
         <form onSubmit={handleSubmit} className="auth-form">
           <input
             type="text"
@@ -75,8 +82,6 @@ export default function Register() {
             onChange={handleChange}
             required
           />
-
-          {/* 👇 Nuevo selector de rol */}
           <select
             name="rol"
             value={form.rol}
@@ -87,14 +92,14 @@ export default function Register() {
             <option value="prestador">Prestador de servicios</option>
           </select>
 
-          <button type="submit" className="auth-button">
-            Registrarse
+          <button type="submit" className="auth-button" disabled={loading}>
+            {loading ? "Registrando..." : "Registrarse"}
           </button>
         </form>
 
         <p className="auth-footer">
           ¿Ya tienes cuenta?
-          <button onClick={() => navigate("/login")} className="auth-link">
+          <button onClick={() => navigate("/")} className="auth-link">
             Inicia sesión
           </button>
         </p>

@@ -16,7 +16,7 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/auth/login", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -28,11 +28,8 @@ export default function Login() {
       // ✅ Guardamos sesión y redirigimos según el rol
       localStorage.setItem("usuarioZenda", JSON.stringify(data.usuario));
 
-      if (data.usuario.rol === "prestador") {
-        navigate("/prestador");
-      } else {
-        navigate("/home");
-      }
+      if (data.usuario.rol === "prestador") navigate("/prestador");
+      else navigate("/home");
     } catch (err) {
       alert(`⚠️ ${err.message}`);
     } finally {
@@ -45,9 +42,7 @@ export default function Login() {
       <div className="auth-box">
         <img src="/zenda-logo.png" alt="Zenda logo" className="auth-logo" />
         <h1 className="auth-title">Bienvenido</h1>
-        <h2 className="auth-subtitle">
-          Inicia sesión en tu cuenta Zenda
-        </h2>
+        <h2 className="auth-subtitle">Inicia sesión en tu cuenta Zenda</h2>
 
         <form onSubmit={handleSubmit} className="auth-form">
           <input
@@ -76,10 +71,7 @@ export default function Login() {
 
         <p className="auth-footer">
           ¿No tienes cuenta?
-          <button
-            onClick={() => navigate("/register")}
-            className="auth-link"
-          >
+          <button onClick={() => navigate("/register")} className="auth-link">
             Regístrate
           </button>
         </p>
