@@ -14,6 +14,7 @@ Content-Type: application/json
 "rol": "cliente"
 }
 
+
 POST {{baseUrl}}/auth/register
 Content-Type: application/json
 
@@ -72,3 +73,15 @@ GET {{baseUrl}}/paquetes
 🧰 Listar servicios
 
 GET {{baseUrl}}/servicios
+
+### 👥 Listar usuarios
+GET https://zenda-mvp.onrender.com/auth/users
+
+### 👥 Listar usuarios
+POST https://zenda-mvp.onrender.com/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "1234"
+}
