@@ -1,30 +1,74 @@
-### 🌐 Test Backend Colibrí
-@baseUrl = https://colibri-backend-od5b.onrender.com
+🌐 Test Backend Zenda
 
-### 👤 Registro de usuario
+@baseUrl = http://localhost:5173
+👤 Registro de usuario (Cliente o Prestador)
+
 POST {{baseUrl}}/auth/register
 Content-Type: application/json
 
 {
-  "nombre": "Rafa",
-  "email": "test@colibri.com",
-  "telefono": "123456789",
-  "password": "1234",
-  "rol": "viajero"
+"nombre": "Rafa",
+"email": "rafa@zenda.com",
+"telefono": "4421234567",
+"password": "1234",
+"rol": "cliente"
 }
 
-### 🔑 Login
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+"nombre": "Carlos Hernández",
+"telefono": "4427654321",
+"password": "1234",
+"rol": "prestador"
+}
+
+🔑 Login
+
 POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
 {
-  "email": "test@colibri.com",
-  "password": "1234"
+"email": "rafa@zenda.com"
+"password": "1234"
 }
 
-### 🔒 Ruta protegida de prueba (ejemplo con token)
-GET {{baseUrl}}/trips
+🔒 Ruta protegida (requiere token)
+
+GET {{baseUrl}}/auth/profile
 Authorization: Bearer {{token}}
 
-### 👥 Listar usuarios
+👥 Listar usuarios
+
 GET {{baseUrl}}/auth/users
+
+🧾 Ejemplo crear solicitud (cliente)
+
+POST {{baseUrl}}/solicitudes
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+"titulo": "Solicitud de redacción de contrato",
+"descripcion": "Necesito apoyo para redactar un contrato de arrendamiento",
+"clienteId": 1
+}
+
+⚙️ Actualizar estado de solicitud (prestador)
+
+PATCH {{baseUrl}}/solicitudes/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+"estado": "en_progreso"
+}
+
+📦 Listar paquetes (para el dashboard principal)
+
+GET {{baseUrl}}/paquetes
+
+🧰 Listar servicios
+
+GET {{baseUrl}}/servicios

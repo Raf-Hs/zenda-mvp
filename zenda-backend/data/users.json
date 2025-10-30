@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1761769451299,
+    "nombre": "Rafa",
+    "email": "rafa@gmail.com",
+    "telefono": "4427477664",
+    "password": "1234"
+  },
+  {
+    "id": 1761772975043,
+    "nombre": "Rafa1",
+    "email": "rafa1@gmail.com",
+    "telefono": "4427477664",
+    "password": "1234"
+  },
+  {
+    "id": 1761773069059,
+    "nombre": "qeq",
+    "email": "qwe@123.com",
+    "telefono": "qwe",
+    "password": "qwe"
+  }
+]
