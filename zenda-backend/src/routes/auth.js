@@ -71,7 +71,7 @@ router.post("/login", async (req, res) => {
 // 🔹 Listar todos los usuarios
 router.get("/users", async (req, res) => {
   try {
-    const usuarios = await prisma.user.findMany({
+    const usuarios = await prisma.usuario.findMany({
       orderBy: { id: "asc" },
       select: {
         id: true,
@@ -79,7 +79,7 @@ router.get("/users", async (req, res) => {
         email: true,
         telefono: true,
         rol: true,
-        createdAt: true,
+        creadoEn: true,
       },
     });
     res.json(usuarios);
@@ -92,7 +92,7 @@ router.get("/users", async (req, res) => {
 // 🔹 Listar solo clientes
 router.get("/clientes", async (req, res) => {
   try {
-    const clientes = await prisma.user.findMany({
+    const clientes = await prisma.usuario.findMany({
       where: { rol: "cliente" },
       orderBy: { id: "asc" },
     });

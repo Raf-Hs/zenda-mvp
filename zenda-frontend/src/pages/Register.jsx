@@ -31,10 +31,10 @@ export default function Register() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Error en el registro");
 
-      alert("✅ Registro exitoso. Ahora inicia sesión.");
-      navigate("/login");
+      //alert("✅ Registro exitoso. Ahora inicia sesión.");
+      navigate("/");
     } catch (err) {
-      alert(`⚠️ ${err.message}`);
+      //alert(`⚠️ ${err.message}`);
     } finally {
       setLoading(false);
     }
